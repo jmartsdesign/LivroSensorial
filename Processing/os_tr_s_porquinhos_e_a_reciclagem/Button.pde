@@ -1,4 +1,4 @@
-class Button0 {
+class Button {
   float px, py;
   float width, height;
   color cor;
@@ -7,7 +7,7 @@ class Button0 {
   Boolean clicked = false;
   
 // construtor do botão
-  Button0(int x, int y, int w, int h, String t, int r, int g, int b){
+  Button(int x, int y, int w, int h, String t, int r, int g, int b){
     px = x;
     py = y;
     width = w;
