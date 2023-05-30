@@ -10,6 +10,7 @@ Arduino arduino;
 
 //configuração som
 SoundFile sound01;
+SoundFile backSound;
 
 int buttonPin = 2;
 
@@ -62,7 +63,7 @@ PImage papelembrulhado;
        int numAmostras = 10; // Número de amostras para a média móvel
        int[] amostras = new int[numAmostras];
        int indiceAmostra = 0;
-       int limiar = 850;  // Defina o limiar desejado aqui 250
+       int limiar = 650;  // Definir o limiar desejado aqui consoante o ambiente
 
 //imagens 4 Reciclar vidro
 PImage reciclavidro;
@@ -104,6 +105,7 @@ void setup() {
   font = createFont("Itim", 35);
   seguinte = loadImage("data/arrowseguinte.png");
   anterior = loadImage("data/arrowanterior.png");
+  backSound = new SoundFile(this, "musicafundo.mp3");
 
   //chamada das imagens para momento 1
   familia02 = loadImage("data/familia02.png"); 
@@ -151,6 +153,7 @@ void draw() {
       ComecarButton.desenha();
 
       if (ComecarButton.getClicked()) {
+        backSound.play();
         menu=1;
       }
     }
@@ -250,9 +253,9 @@ void draw() {
        if (buttonValue == Arduino.HIGH) {
            buttonState = true;
           arduino.analogWrite(buzzerPin, 1255);// Ligar o buzzer com uma frequência alta
-          delay(200);
+          delay(50);
           arduino.analogWrite(buzzerPin, 0); // Desligar o buzzer
-          delay(200);}
+          delay(50);}
 
      // } else if (potValue < 1023) {
        // alarmActive = false;
@@ -279,7 +282,7 @@ void draw() {
   
   // Adiciona a amostra atual ao array
      amostras[indiceAmostra] = valorSensor;
-     indiceAmostra = (indiceAmostra + 1) % numAmostras;
+     indiceAmostra = (indiceAmostra+1) % numAmostras;
   
   // Calcula a média das amostras
      float media = 0;
@@ -310,9 +313,9 @@ void draw() {
        if (buttonValue == Arduino.HIGH) {
            buttonState = true;
           arduino.analogWrite(buzzerPin, 1255);// Ligar o buzzer com uma frequência alta
-          delay(200);
+          delay(50);
           arduino.analogWrite(buzzerPin, 0); // Desligar o buzzer
-          delay(200);}
+          delay(50);}
 
     }
     break;
@@ -329,8 +332,8 @@ void draw() {
       //função do botão
        // Lê o estado do botão no pino 2
         int buttonValue = arduino.digitalRead(2);
-        int delay = 1000;
-
+        
+        
       // Se o botão for pressionado, atualiza o estado do botão e desativa o potenciômetro
         if (buttonValue == Arduino.LOW ) {
         
@@ -352,7 +355,7 @@ void draw() {
            delay(200);
            sound01.play();}
             else {
-             delay(1000); }
+             image(seguinte, width-100, height-70);}
 
        
 
