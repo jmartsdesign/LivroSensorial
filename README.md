@@ -1,11 +1,10 @@
 ﻿# LivroSensorial
+![chrome_CSKvsEMaGm](https://github.com/jmartsdesign/LivroSensorial/blob/main/docs/Fotos/image8.png?raw=true)
+
 Trabalho da disciplina de TI do MSM na FCTUC
-
----
-![chrome_CSKvsEMaGm](https://github.com/jmartsdesign/LivroSensorial/assets/57221659/ad12524d-14c9-4363-bde7-0b158d11cecf)
-
----
+----
 ## VIdeos
+
 ---
 ![enter image description here](https://raw.githubusercontent.com/jmartsdesign/LivroSensorial/main/docs/Fotos/Imagens/chrome_MCluFzOAjy.png)
 [video](https://kdrive.infomaniak.com/app/share/723395/890b86db-3313-41ae-8321-d7a32a2ec91b)
